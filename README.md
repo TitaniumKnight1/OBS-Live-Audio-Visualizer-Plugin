@@ -28,13 +28,27 @@ A real-time audio-reactive visualizer plugin for OBS Studio that displays dynami
 
 ### Windows Installation
 
-1. Download the latest release DLL from [Releases](https://github.com/TitaniumKnight1/OBS-Live-Audio-Visualizer-Plugin/releases)
-2. Extract and copy `audio-visualizer.dll` to:
+**For Non-Technical Users:** See [INSTALL.md](INSTALL.md) for detailed step-by-step instructions!
+
+**Quick Installation:**
+1. Download both files from [Releases](https://github.com/TitaniumKnight1/OBS-Live-Audio-Visualizer-Plugin/releases):
+   - `audio-visualizer.dll`
+   - `en-US.ini`
+
+2. Copy `audio-visualizer.dll` to:
    ```
    C:\Program Files\obs-studio\obs-plugins\64bit\
    ```
-3. Restart OBS Studio
-4. Add a new Source → Select "Audio Visualizer"
+
+3. Create folder structure and copy `en-US.ini` to:
+   ```
+   C:\Program Files\obs-studio\obs-plugins\64bit\audio-visualizer\locale\en-US.ini
+   ```
+   (Create the `audio-visualizer` and `locale` folders if they don't exist)
+
+4. Restart OBS Studio
+
+5. Add a new Source → Select "Audio Visualizer"
 
 ### Building from Source
 
@@ -126,6 +140,7 @@ ninja
 **Plugin doesn't load:**
 - Ensure OBS Studio version is 31.1.1 or later
 - Check that the DLL is in the correct plugins directory
+- Verify the folder structure is correct: `audio-visualizer\locale\en-US.ini`
 - Restart OBS after installation
 
 **Audio not showing:**
@@ -136,6 +151,9 @@ ninja
 **Visualizer looks choppy:**
 - Reduce smoothing value or increase decay
 - Lower the bar count by increasing gap/width
+
+**Text labels are missing in settings:**
+- Ensure `en-US.ini` is in: `C:\Program Files\obs-studio\obs-plugins\64bit\audio-visualizer\locale\en-US.ini`
 
 ## Contributing
 
